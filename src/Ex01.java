@@ -9,6 +9,8 @@ public class Ex01 {
 		System.out.println("배고픔니다");
 		System.out.println("팀워2 뭔놈의 오류가 이렇게..");
 		
+		System.out.println("자잘한 오류 화나는군요");
+		
 		System.out.println("나만의 작업 커밋");
 	}
 

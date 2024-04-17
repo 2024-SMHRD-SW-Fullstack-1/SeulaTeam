@@ -17,6 +17,8 @@ public class Ex01 {
 		
 		System.out.println("branch 팀원cha커밋");
 		System.out.println("branch 팀원1 커밋");
+		System.out.println("branch 슬아 커밋");
+		
 
 	}
 

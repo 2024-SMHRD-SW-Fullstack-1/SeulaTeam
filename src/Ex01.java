@@ -12,6 +12,9 @@ public class Ex01 {
 		System.out.println("자잘한 오류 화나는군요");
 		
 		System.out.println("나만의 작업 커밋");
+		
+		System.out.println("branch 팀원cha커밋");
+		System.out.println("branch 슬아 커밋");
 	}
 
 }

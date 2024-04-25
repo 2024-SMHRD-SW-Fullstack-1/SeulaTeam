@@ -1,0 +1,25 @@
+package 계산게임;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int count = 0;
+
+		PlusGame pg = new PlusGame();
+
+		for (int i = 0; i < 5; i++) {
+			pg.makeRandom();
+			while (true) {
+				System.out.print(pg.getQuizMsg());
+				int input = sc.nextInt();
+				System.out.println(pg.checkAnswer(input));
+				break;
+			}
+		}
+	}
+
+}

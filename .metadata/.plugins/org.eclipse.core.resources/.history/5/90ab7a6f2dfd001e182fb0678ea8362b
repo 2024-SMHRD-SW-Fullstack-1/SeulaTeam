@@ -1,0 +1,11 @@
+package 추상클래스;
+
+public class Employee {
+	
+	private String empno;
+	private String name;
+	private int pay;
+	
+	
+	
+}

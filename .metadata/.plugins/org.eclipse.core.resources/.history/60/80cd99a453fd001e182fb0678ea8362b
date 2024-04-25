@@ -1,0 +1,18 @@
+package 계산게임;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		PlusGame pg = new PlusGame();
+		pg.makeRandom();
+		System.out.println(pg.getQuizMsg());
+		int input = sc.nextInt();
+		
+	}
+
+}

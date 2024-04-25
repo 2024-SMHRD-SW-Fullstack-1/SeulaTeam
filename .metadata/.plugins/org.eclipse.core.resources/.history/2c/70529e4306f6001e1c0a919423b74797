@@ -1,0 +1,19 @@
+package 풀이;
+
+public class Ex보너스2번 {
+
+	public static void main(String[] args) {
+		
+		System.out.println(getMiddle("power"));
+
+	}
+
+	private static char getMiddle(String string) {
+		char result = 0;
+		
+		
+		
+		return result;
+	}
+
+}

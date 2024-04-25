@@ -1,0 +1,25 @@
+package Ex01while문;
+
+import java.util.Random;
+
+public class Ex01while문10 {
+
+	public static void main(String[] args) {
+		
+		
+		do{	
+		Random rd = new Random();
+		int num1 = rd.nextInt(10);
+		int num2 = rd.nextInt(10);
+			
+		System.out.println(num1+"+"+num2+"="+(num1+num2));
+			
+			
+			
+			
+		}while(true);
+			
+
+	}
+
+}

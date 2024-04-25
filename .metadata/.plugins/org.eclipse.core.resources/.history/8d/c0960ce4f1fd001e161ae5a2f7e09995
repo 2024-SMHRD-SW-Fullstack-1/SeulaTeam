@@ -1,0 +1,36 @@
+package JDBC기초;
+
+public class Ex01Join {
+
+	public static void main(String[] args) {
+		
+		  //JDBC(Java Data Base Connectivity)
+		  //드라이버 로딩 -> 데이터베이스 연결 -> Query전송 -> 결과를 이용한 작업처리 -> 자원반납
+		 
+		
+		try { // try구문
+			  // : 예외가 발생할 수도 있지만, 우선 시도해보는 구간
+			
+			 /* JDBC 인터페이스 사용방법!
+			 * 1. 드라이버 로딩
+			 * JDBC 드라이버란?
+			 * : java에서 제공해주는 인터페이스들을 데이터베이스 회사에서 
+			 *   상속을 받아서 로직을 구현한 클래스 파일들의 모음
+			 */  
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			// catch 구문
+			// --> 예외가 발생했을 때, 어떤 로직을 수행할 지 작성하는 구긴
+			e.printStackTrace();
+			// 예외상황이 왜 발생했고, 어디서 문제가 나고 있는지
+			// 출력해주는 구문!! ---> 개발할때만 사용하기! ---> 배포할때는 삭제하는것이 좋음
+			
+		}
+		
+
+	}
+
+}

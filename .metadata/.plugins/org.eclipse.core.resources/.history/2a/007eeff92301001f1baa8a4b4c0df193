@@ -1,0 +1,33 @@
+package 채팅프로그램;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class SocketClientMain {
+
+	public static void main(String[] args) {
+		
+		//Socket(서버소켓네트워크주소, 포트번호)
+		try {
+			Socket socket = new Socket("172.30.1.100", 1234);
+			System.out.println("서버 접속 성공!");
+			
+			// 채팅내용서버로 보내는 작업(WritingThread)
+			// 서버가 보내주는 다른 클라이언트의 채팅내용 받는 작업(ListeningThread)
+			ListeningThread lt = new ListeningThread(socket);
+			WritingThread wt = new WritingThread(socket);
+			
+			lt.start();
+			wt.start();
+			
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,18 @@
+package Ex01while문;
+
+import java.util.Random;
+
+public class Ex01while문10 {
+
+	public static void main(String[] args) {
+		
+		Random rd = new Random();
+		int num1 = rd.nextInt();
+		int num2 = rd.nextInt();
+		
+		System.out.println(num1);
+		
+
+	}
+
+}

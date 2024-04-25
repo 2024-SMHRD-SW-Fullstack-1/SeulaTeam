@@ -1,0 +1,142 @@
+package Controller;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import Model.MemberDTO;
+
+public class MemberDAO {
+
+	// DAta Access Object : 데이터에 접근하는 것을 도와주는 객체
+	// DB 연결해서 insert, delete, update, select 하는 코드들의 모음
+	// 메소드 형태로 코드를 작성
+
+	// 회원가입 메소드
+	public int join(MemberDTO dto) {
+		PreparedStatement psmt = null;
+		Connection conn = null;
+		int row = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			String ur1 = "jdbc:oracle:thin:@localhost:1521:xe";
+
+			String user = "service";
+			String paaword = "12345";
+
+			conn = DriverManager.getConnection(ur1, user, paaword);
+
+			String sql = "INSERT INTO FULLSTACKMEMBER(ID, PW, NAME, AGE, SCORE) VALUES(?, ?, ?, ?, ?)";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getId());
+			psmt.setString(2, dto.getPw());
+			psmt.setString(3, dto.getName());
+			psmt.setInt(4, dto.getAge());
+			psmt.setInt(5, dto.getScore());
+
+			row = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (psmt != null)
+					psmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return row;
+	}
+	
+	public String login(MemberDTO dto) {
+		ResultSet rs = null;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String uName = null;
+
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			String ur1 = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user = "service";
+			String paaword = "12345";
+
+			conn = DriverManager.getConnection(ur1, user, paaword);
+
+			String sql = "SELECT * FROM FULLSTACKMEMBER WHERE ID = ? AND PW = ?";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getId());
+			psmt.setString(2, dto.getPw());
+
+			rs = psmt.executeQuery();
+		
+			if (rs.next() == true) {
+				uName = rs.getNString("name");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (psmt != null)
+					psmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return uName;
+	}
+	
+	public void delete(MemberDTO dto) {
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		int rs = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			String ur1 = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user = "service";
+			String paaword = "12345";
+
+			conn = DriverManager.getConnection(ur1, user, paaword);
+
+			String sql = "delete fullstackmember where id = ? and pw = ?";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getId());
+			psmt.setString(2, dto.getPw());
+
+			rs = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (psmt != null)
+					psmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+}

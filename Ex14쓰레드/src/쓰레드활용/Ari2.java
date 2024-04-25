@@ -1,0 +1,27 @@
+package 쓰레드활용;
+
+public class Ari2 implements Runnable{
+	
+	private String skill;
+	
+	public Ari2(String key) {
+		this.skill = key;
+	}
+	
+	@Override
+	public void run() {
+		System.out.println("입력키 : " + skill);
+		// 한 스킬당 3초동안 사용
+		for (int i = 1; i <= 3; i++) {
+			System.out.println(skill + "사용중 : " + i + "s");
+		}
+
+		System.out.println(skill + "스킬 사용 종료");
+		
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;Ex09ArrayLust/src/mp3PlayerMVC&apos;&#x0D;&#x0A;- Original project: &apos;Ex09ArrayLust&apos;&#x0D;&#x0A;- Destination element: &apos;Ex09ArrayLust/src/mp3PlayerMVC&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     mp3player.Music.java&#x0D;&#x0A;     mp3player.MusicMain.java" description="Copy compilation units" destination="/src&lt;mp3PlayerMVC" element1="/src&lt;mp3player{Music.java" element2="/src&lt;mp3player{MusicMain.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1713227754512" units="2" version="1.0"/>
+</session>

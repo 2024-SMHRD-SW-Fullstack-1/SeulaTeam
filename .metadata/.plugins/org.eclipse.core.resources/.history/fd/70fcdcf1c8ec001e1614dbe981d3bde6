@@ -1,0 +1,29 @@
+package Ex01while문;
+
+import java.util.Scanner;
+
+public class asdf {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+	      System.out.print("현재 몸무게 : ");
+	       int weight = sc.nextInt();
+	       System.out.print("목표 몸무게 : ");
+	       int goal = sc.nextInt();
+	       
+	       
+	       while(weight!=goal){
+	          System.out.print("감량 몸무게: ");
+	          int reduction =sc.nextInt();
+	          weight-=reduction;
+	          if(weight<goal) {
+	             System.out.println("최종몸무게 : "+weight+"\n축하합니다!!!");
+	             break;
+	          }
+	       }
+
+	}
+
+}

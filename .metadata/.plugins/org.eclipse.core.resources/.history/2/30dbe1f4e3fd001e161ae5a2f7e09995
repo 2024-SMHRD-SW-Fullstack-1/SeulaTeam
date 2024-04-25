@@ -1,0 +1,15 @@
+package JDBC기초;
+
+public class Ex01기초 {
+
+	public static void main(String[] args) {
+		
+		/* JDBC
+		 * 드라이버 로딩 -> 데이터베이스 연결 -> Query전송 -> 결과를 이용한 작업처리 -> 자원반납
+		 * 
+		 * */
+		
+
+	}
+
+}

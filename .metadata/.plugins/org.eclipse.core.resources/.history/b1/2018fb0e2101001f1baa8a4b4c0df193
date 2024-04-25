@@ -1,0 +1,10 @@
+package 채팅프로그램;
+
+public class SocketClientMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

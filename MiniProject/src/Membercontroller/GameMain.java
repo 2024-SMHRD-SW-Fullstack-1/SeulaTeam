@@ -1,0 +1,83 @@
+package Membercontroller;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class GameMain {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		while (true) {
+			System.out.print("[1] 회원가입 [2] 로그인 [3] 랭킹 >>");
+			int choice = sc.nextInt();
+
+			if (choice == 1) {
+				System.out.println("======= 회원 가입 =======");
+				System.out.print("ID 입력 : ");
+				String id = sc.next();
+				System.out.print("PW 입력 : ");
+				String pw = sc.next();
+				System.out.print("이름 입력 : ");
+				String name = sc.next();
+				System.out.print("나이 입력 : ");
+				int age = sc.nextInt();
+				System.out.print("이메일 입력 : ");
+				String email = sc.next();
+				System.out.print("성별 입력 : ");
+				String gender = sc.next();
+
+				GameMemberDAO dao = new GameMemberDAO();
+				GameMemberDTO dto = new GameMemberDTO(id, pw, name, age, email, gender);
+				int row = dao.join(dto);
+				dto = new GameMemberDTO(id, name, 0);
+				int row2 = dao.join2(dto);
+				
+
+				if (row > 0) {
+					System.out.println("회원가입이 성공하였습니다.");
+				} else {
+					System.out.println("회원가입 실패하였습니다.");
+				}
+
+			} else if (choice == 2) {
+				System.out.println("======= 로그인 =======");
+				System.out.print("ID 입력 : ");
+				String id = sc.next();
+				System.out.print("PW 입력 : ");
+				String pw = sc.next();
+
+				GameMemberDAO dao = new GameMemberDAO();
+				GameMemberDTO dto = new GameMemberDTO(id, pw);
+				String uName = dao.login(dto);
+
+				if (uName != null) {
+					System.out.println(uName + "님 환영합니다.");
+					break;
+				} else {
+					System.out.println("로그인이 실패했습니다..");
+					System.out.println("아이디나 비밀번호를 다시 확인해보세요..");
+				}
+
+			} else if (choice == 3) {
+				System.out.println("======= 랭킹 =======");
+				GameMemberDAO dao = new GameMemberDAO();
+				ArrayList<GameMemberDTO> list = dao.selectAll();
+
+				for (GameMemberDTO dto : list) {
+					System.out.println(dto.getId() + "\t" + dto.getScore());
+				}
+
+			} else {
+				System.out.println("종료합니다.");
+				break;
+			}
+
+		}
+
+	}
+
+}

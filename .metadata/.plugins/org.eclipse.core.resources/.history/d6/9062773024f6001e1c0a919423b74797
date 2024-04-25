@@ -1,0 +1,26 @@
+package 풀이;
+
+import java.util.Scanner;
+
+public class asdf {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println(getMiddle("power"));
+
+	}
+
+	private static String getMiddle(String word) {
+		String[] arr = word.split("");
+
+		if (arr.length % 2 == 0) {
+			return arr[arr.length / 2 - 1 + arr.length / 2];
+		} else {
+			return arr[arr.length / 2];
+		}
+
+	}
+
+}

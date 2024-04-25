@@ -1,0 +1,17 @@
+package 인터페이스;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Temp t = new Temp() {
+
+			@Override
+			public void temp() {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		};
+	}
+
+}

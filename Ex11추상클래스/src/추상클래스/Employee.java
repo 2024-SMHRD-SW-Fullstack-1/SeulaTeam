@@ -1,0 +1,28 @@
+package 추상클래스;
+
+public abstract class Employee {
+
+	// 접근제한자 : 클래스 변수와 메소드를 외부(다른 클래스)에서 접근할 수 있는 범위를 지정
+	// public >> protected >> package(default) >> private
+	// public : 모든 클래스에서 접근 가능
+	// protected : 같은 패키지 + 상속 관계끼리 접근 가능
+	// package : 같은 패키지끼리 접근 가능
+	// private : 외부 클래스에서 접근 불가
+
+	protected String empno;
+	protected String name;
+	protected int pay;
+
+	public Employee(String empno, String name, int pay) {
+		super();
+		this.empno = empno;
+		this.name = name;
+		this.pay = pay;
+	}
+
+	public abstract int getMoneyPay();
+
+	public String print() {
+		return empno + " / " + name + " / " + pay;
+	}
+}

@@ -1,6 +1,6 @@
-package 추상클래스;
+package MiniPro;
 
-public class RegularEmployeeMain {
+public class MiniMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
